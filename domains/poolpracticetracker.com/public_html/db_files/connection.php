@@ -1,11 +1,8 @@
 <?php
-    // CRITICAL SECURITY WARNING:
-    // Database credentials are hardcoded and stored in a web-accessible directory.
-    // They MUST be moved to environment variables or a configuration file outside the web root.
-    $dbhost = "localhost";
-    $dbuser = "u449903691_eooaokt";
-    $dbpass = "DKarnag3*ppt";
-    $dbname = "u449903691_eooaokt";
+    $dbhost = getenv('DB_HOST');
+    $dbuser = getenv('DB_USER');
+    $dbpass = getenv('DB_PASS');
+    $dbname = getenv('DB_NAME');
 
     // Initialize $conn using Object-Oriented mysqli
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
