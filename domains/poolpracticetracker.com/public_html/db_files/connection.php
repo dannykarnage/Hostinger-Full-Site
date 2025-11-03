@@ -3,7 +3,7 @@
     $dbuser = getenv('DB_USER');
     $dbpass = getenv('DB_PASS');
     $dbname = getenv('DB_NAME');
-
+    
     // Initialize $conn using Object-Oriented mysqli
     $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
