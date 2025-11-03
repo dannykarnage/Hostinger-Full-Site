@@ -2,8 +2,10 @@
 
     session_start();
 
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
+    // FIX: Changed absolute path to relative path
+    include('../db_files/connection.php');
+    // FIX: Changed absolute path to relative path
+    include('../functions.php');
 
     //if the user isn't logged in, redirect to the home page
     if(!isset($_SESSION['username']))
@@ -83,7 +85,10 @@
     </head>
     <body>
         
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/header.php'); 
+        ?>
 
         <main class="main-section">
             <div class="accounts-form-header">
@@ -131,7 +136,10 @@
             </form>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/footer.php'); 
+        ?>
 
     </body>
 </html>

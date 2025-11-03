@@ -1,8 +1,9 @@
 <?php
     session_start();
 
-    //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
+    // FIX: Changed absolute path to relative path
+    //include('../../functions.php');
+    include('../db_files/connection.php');
     $login_error = "";
     
     //determine if a user is already logged in and, if so, redirect to the homepage
@@ -33,7 +34,7 @@
                 {
                     $login_error = "The password on that account has been disabled. Please click on the <b>Having Trouble?</b> link below to request your password be reset.";
                 }
-                // *** CRITICAL SECURITY FIX: Use password_verify() instead of md5() comparison ***
+                // CRITICAL SECURITY FIX: Use password_verify() instead of md5() comparison
                 elseif(password_verify($password, $user_data['password']))
                 {
                     $_SESSION['username'] = $username; // Use the cleaned username
@@ -79,7 +80,10 @@
     </head>
     <body>
         
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/header.php'); 
+        ?>
 
         <main class="main-section">
             <div class="user-heading">
@@ -111,7 +115,10 @@
             </form>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/footer.php'); 
+        ?>
 
     </body>
 </html>

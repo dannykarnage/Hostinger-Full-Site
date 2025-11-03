@@ -1,8 +1,10 @@
 <?php
 
     session_start();
+    // FIX: Commented out absolute path
     //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
+    // FIX: Changed absolute path to relative path
+    include('../../db_files/connection.php');
     $error_message = "";
     $outcome = "";
     $username = ""; // Initialize username
@@ -85,7 +87,7 @@
             {
                 $row = $result->fetch_assoc();
                 
-                // *** CRITICAL SECURITY FIX: Use password_verify() instead of md5() comparison ***
+                // CRITICAL SECURITY FIX: Use password_verify() instead of md5() comparison
                 if(!password_verify($current_password, $row['password']))
                 {
                     $error_message = "Current password is incorrect. Please try again.";
@@ -135,7 +137,7 @@
             }
             else
             {
-                // *** CRITICAL SECURITY FIX: Use password_hash() instead of md5() ***
+                // CRITICAL SECURITY FIX: Use password_hash() instead of md5()
                 $new_password_hash = password_hash($password_1, PASSWORD_DEFAULT);
                 
                 // Update password (using prepared statements)
@@ -171,7 +173,10 @@
     </head>
     <body>
         
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../../temps/header.php'); 
+        ?>
 
         <main class="main-section">
             <div class="user-heading">
@@ -216,7 +221,10 @@
             </form>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../../temps/footer.php'); 
+        ?>
 
     </body>
 </html>
