@@ -2,8 +2,7 @@
 
     session_start();
 
-    //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
+    include('../db_files/connection.php');
     $error_message = "";
     $email = "";
 
@@ -38,7 +37,8 @@
                 {
                     //send email
                     $subject = "Username request";
-                    include('/home/u449903691/domains/poolpracticetracker.com/public_html/accounts/manage_login/recover_username_email.php');
+                    // FIX: Changed absolute path to relative path
+                    include('recover_username_email.php');
                     $headers = "From: donotreply@poolpracticetracker.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -83,7 +83,10 @@
     <body>
         
         
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../../temps/header.php'); 
+        ?>
 
         <main class="main-section">
             <div class="user-heading">
@@ -110,7 +113,10 @@
             </form>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../../temps/footer.php'); 
+        ?>
 
     </body>
 </html>

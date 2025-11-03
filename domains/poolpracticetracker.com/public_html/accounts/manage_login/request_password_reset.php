@@ -2,8 +2,7 @@
 
     session_start();
 
-    //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
+    include('../db_files/connection.php');
     $error_message = "";
 
     //determine if a user is already logged in and, if so, redirect to the homepage
@@ -52,7 +51,6 @@
 
         if(empty($error_message))
         {
-            // *** SECURITY FIX: Use a cryptographically secure random string instead of md5(time().$username) ***
             try {
                 $pkey = bin2hex(random_bytes(16)); // Generates a 32-character hex token
             } catch (Exception $e) {
@@ -71,7 +69,7 @@
                 {
                     //send email
                     $subject = "Password reset request.";
-                    include('/home/u449903691/domains/poolpracticetracker.com/public_html/accounts/manage_login/password_reset_email.php');
+                    include('password_reset_email.php');
                     $headers = "From: donotreply@poolpracticetracker.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -108,7 +106,9 @@
     </head>
     <body>
         
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        include('../../temps/header.php'); 
+        ?>
 
         <main class="main-section">
             <div class="user-heading">
@@ -138,7 +138,9 @@
             </form>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        include('../../temps/footer.php'); 
+        ?>
 
     </body>
 </html>

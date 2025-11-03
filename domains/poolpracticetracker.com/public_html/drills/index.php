@@ -2,7 +2,8 @@
 
     session_start();
     //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
+    // FIX: Changed absolute path to relative path
+    include('../db_files/connection.php');
     $error_message = "";
 
 
@@ -37,7 +38,10 @@
     </head>
     <body style="padding-bottom: 40px;">
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/header.php'); 
+        ?>
 
         <main class="main-section">
             <div class="page-subtitle">
@@ -96,7 +100,10 @@
             <?php endif; ?>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/footer.php'); 
+        ?>
 
     </body>
 </html>

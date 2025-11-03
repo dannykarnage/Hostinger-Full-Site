@@ -1,9 +1,6 @@
 <?php
 
     session_start();
-    // FIX: Commented out absolute path
-    //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
-    // FIX: Changed absolute path to relative path
     include('../../db_files/connection.php');
     $error_message = "";
     $outcome = "";
@@ -87,7 +84,6 @@
             {
                 $row = $result->fetch_assoc();
                 
-                // CRITICAL SECURITY FIX: Use password_verify() instead of md5() comparison
                 if(!password_verify($current_password, $row['password']))
                 {
                     $error_message = "Current password is incorrect. Please try again.";
@@ -137,10 +133,8 @@
             }
             else
             {
-                // CRITICAL SECURITY FIX: Use password_hash() instead of md5()
                 $new_password_hash = password_hash($password_1, PASSWORD_DEFAULT);
                 
-                // Update password (using prepared statements)
                 $stmt = $conn->prepare("UPDATE `users` SET `password` = ?, `pkey` = NULL, `password_reset_required` = 0 WHERE `username` = ?");
                 $stmt->bind_param("ss", $new_password_hash, $username);
                 $result = $stmt->execute();
@@ -174,7 +168,6 @@
     <body>
         
         <?php 
-        // FIX: Changed absolute path to relative path
         include('../../temps/header.php'); 
         ?>
 
@@ -222,7 +215,6 @@
         </main>
 
         <?php 
-        // FIX: Changed absolute path to relative path
         include('../../temps/footer.php'); 
         ?>
 

@@ -85,7 +85,10 @@
     </head>
     <body>
         
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/header.php'); 
+        ?>
 
         <main class="main-section">
 

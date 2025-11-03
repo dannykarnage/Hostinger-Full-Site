@@ -7,7 +7,8 @@
 
         $vkey = $_GET['vkey'];
 
-        include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
+        // FIX: Changed absolute path to relative path
+        include('../db_files/connection.php');
 
         // Check for unverified account with vkey (using prepared statements)
         $stmt_unverified = $conn->prepare("SELECT verified, vkey FROM users WHERE verified = 0 AND vkey = ? LIMIT 1");
@@ -71,7 +72,10 @@
     </head>
     <body>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/header.php'); 
+        ?>
 
         <main class="main-section">
         <div class="text-grid-three-by-one">
@@ -79,7 +83,7 @@
                 <div class="middle-section">
                     <div class="left-justified-paragraph">
                         <p>
-                            <?php echo $outcome; ?>
+                            <?php echo htmlspecialchars($outcome); ?>
                         </p>
                     </div>
                 </div>
@@ -89,6 +93,9 @@
 
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/footer.php'); 
+        ?>
     </body>
 </html>

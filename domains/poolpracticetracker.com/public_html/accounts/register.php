@@ -22,7 +22,8 @@
         if(isset($_POST['submit']))
         {            
             // Note: The /db_files/connection.php must be included first for $conn to be defined.
-            include("/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php");
+            // FIX: Changed absolute path to relative path
+            include("../db_files/connection.php");
 
             // No need for mysqli_real_escape_string anymore, as prepared statements handle escaping.
             $username = trim($_POST['username']);
@@ -129,7 +130,8 @@
                     //send email
                     $subject = "Email verification";
                     //$email_message is defined in the verification-email.php file
-                    include('/home/u449903691/domains/poolpracticetracker.com/public_html/accounts/verification-email.php');
+                    // FIX: Changed absolute path to relative path
+                    include('verification-email.php');
                     $headers = "From: donotreply@poolpracticetracker.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -162,7 +164,10 @@
     </head>
     <body>
         
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/header.php'); 
+        ?>
 
         <main class="main-section">
             <div class="user-heading">
@@ -202,7 +207,10 @@
             </form>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/footer.php'); 
+        ?>
 
     </body>
 </html>

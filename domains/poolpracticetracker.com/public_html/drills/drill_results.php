@@ -3,7 +3,8 @@
     session_start();
 
     //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
+    // FIX: Changed absolute path to relative path
+    include('../db_files/connection.php');
 
     //if the user isn't logged in, redirect to the home page
     if(!isset($_SESSION['username']))
@@ -155,17 +156,26 @@
     </head>
     <body>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/header.php'); 
+        ?>
 
         <main class="main-section">
             <div class="history-header">
                 <h4>History of Drill #<?php echo htmlspecialchars($drill_id); ?> for <?php echo htmlspecialchars($username); ?></h4>
             </div>
 
-            <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/drills/type' . $drill_type . '_drill_html.php'); ?>
+            <?php 
+            // FIX: Changed absolute path to relative path
+            include('type' . $drill_type . '_drill_html.php'); 
+            ?>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php 
+        // FIX: Changed absolute path to relative path
+        include('../temps/footer.php'); 
+        ?>
 
     </body>
 </html>
