@@ -4,7 +4,7 @@
     // They MUST be moved to environment variables or a configuration file outside the web root.
     $dbhost = "localhost";
     $dbuser = "u449903691_eooaokt";
-    $dbpass = "Cim4is2cOF";
+    $dbpass = "DKarnag3*ppt";
     $dbname = "u449903691_eooaokt";
 
     // Initialize $conn using Object-Oriented mysqli
