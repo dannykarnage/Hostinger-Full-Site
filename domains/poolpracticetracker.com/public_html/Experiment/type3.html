@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            My Account - Pool Practice Tracker
+        </title>
+        <link rel="stylesheet" type="text/css" href="/styles/general.css">
+        <link rel="stylesheet" type="text/css" href="/styles/header.css">
+        <link rel="stylesheet" type="text/css" href="/styles/history.css">
+    </head>
+    <body>
+
+        <header>
+            <div class="header">
+                <div class="left-section">                   
+                    <a href="http://127.0.0.1:8080/">
+                        <img src="http://127.0.0.1:8080/images/website-logo.png" class ="header-logo" style="border-radius: 2px;"> 
+                    </a>
+                </div>
+                <div class="middle-section">
+                    <a href="http://127.0.0.1:8080/accounts/">
+                        <div class="menu-item"> 
+                            My Account
+                        </div>
+                    </a>
+                    <a href="http://127.0.0.1:8080/accounts/logout.php">
+                        <div class="menu-item">
+                            Logout
+                        </div>
+                    </a>
+                    <a href="http://127.0.0.1:8080/drills">
+                        <div class="menu-item">
+                            Drills
+                        </div>
+                    </a>
+                    <!--<a href="/contact-us.php">-->
+                    <a href="http://127.0.0.1:8080/this-link-doesnt-work.html">
+                        <div class="menu-item">
+                            Contact Us
+                        </div>
+                    </a>
+                </div>
+                <div class="right-section">
+                    <a href="http://127.0.0.1:8080/this-link-doesnt-work.html">
+                        <img class="patreon-icon" src="http://127.0.0.1:8080/images/icons/patreon_logo.svg">
+                    </a>
+                    <a href="http://127.0.0.1:8080/this-link-doesnt-work.html">
+                        <img class="facebook-icon" src="http://127.0.0.1:8080/images/icons/Facebook-f_Logo-Blue-Logo.wine.svg">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCvYec5b7AdatNJQpe9P1e4A" target="_blank">
+                        <img class="youtube-icon" src="http://127.0.0.1:8080/images/icons/youtube-svgrepo-com.svg">
+                    </a>
+                </div>    
+            </div>
+        </header>
+
+        <main class="main-section">
+            <div class="history-header">
+                <h4>History of Drill #8 for catchme3</h4>
+            </div>
+
+            <div class="history-data-display">
+                <div class="history-data-separator-two-column">
+                    <div class="two-column-table-container">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th class="date-column-header">Date</th>
+                                    <th class="data-column-header">Score</th>
+                                </tr>
+                                <tr>
+                                    <th class="date-column-odd">
+                                        2022-06-25
+                                    </th>
+                                    <th class="data-column-odd">
+                                        8
+                                    </th>
+                                </tr>
+                                    <tr>
+                                                                                            <th class="date-column-even">
+                                    2022-06-26                                </th>
+                                <th class="data-column-even">
+                                    10                                </th>
+                                                    </tr>
+                                            <tr>
+                                                                                            <th class="date-column-odd">
+                                    2022-06-26                                </th>
+                                <th class="data-column-odd">
+                                    3                                </th>
+                                                    </tr>
+                                            <tr>
+                                                                                            <th class="date-column-even">
+                                    2022-07-07                                </th>
+                                <th class="data-column-even">
+                                    3                                </th>
+                                                    </tr>
+                                            <tr>
+                                                                                            <th class="date-column-odd">
+                                    2022-07-07                                </th>
+                                <th class="data-column-odd">
+                                    9                                </th>
+                                                    </tr>
+                                            <tr>
+                                                                                            <th class="date-column-even">
+                                    2022-07-07                                </th>
+                                <th class="data-column-even">
+                                    7                                </th>
+                                                    </tr>
+                                            <tr>
+                                                                                            <th class="date-column-odd">
+                                    2022-07-07                                </th>
+                                <th class="data-column-odd">
+                                    9                                </th>
+                                                    </tr>
+                                            <tr>
+                                                                                            <th class="date-column-even">
+                                    2022-07-07                                </th>
+                                <th class="data-column-even">
+                                    7                                </th>
+                                                    </tr>
+                                            <tr>
+                                                                                            <th class="date-column-odd">
+                                    2022-07-07                                </th>
+                                <th class="data-column-odd">
+                                    6                                </th>
+                                                    </tr>
+                                    </tbody>
+            </table>
+        </div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div id="chart_div">
+            <script>
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+            
+                function drawChart()
+                {
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('datetime', 'Date');
+                    data.addColumn('number', 'Score');
+
+                    data.addRows([
+                        [new Date(2022, 5, 25, 23, 25, 20), 8], [new Date(2022, 5, 26, 0, 35, 0), 10], [new Date(2022, 5, 26, 0, 35, 7), 3], [new Date(2022, 6, 7, 20, 45, 42), 3], [new Date(2022, 6, 7, 20, 45, 46), 9], [new Date(2022, 6, 7, 20, 58, 58), 7], [new Date(2022, 6, 7, 20, 59, 1), 9], [new Date(2022, 6, 7, 20, 59, 3), 7], [new Date(2022, 6, 7, 20, 59, 6), 6]                    ]);
+
+                    var options = {
+                        width: 600,
+                        height: 400,
+                        legend: {position: 'none'},
+                        pointSize: 5,
+                        enableInteractivity: true,
+                        chartArea: {
+                            width: '95%'
+                        },
+                        hAxis: {
+                            viewWindow: {
+                                min: new Date(2022, 5, 25, 23, 25, 20),
+                                max: new Date(2022, 6, 7, 20, 59, 6)
+                            },
+                            gridlines: {
+                                count: -1,
+                                units: {
+                                    days: {format: ['MMM dd']},
+                                    hours: {format: ['HH:mm', 'ha']},
+                                }
+                            },
+                            minorGridlines: {
+                                units: {
+                                    hours: {format: ['hh:mm:ss a', 'ha']},
+                                    minutes: {format: ['HH:mm a Z', ':mm']}
+                                }
+                            }
+                        }
+                    }
+                
+                    var chart = new google.visualization.LineChart(
+                    document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                };
+            </script>
+        </div>
+    </div>
+</div>        </main>
+
+        
+    </body>
+</html>
