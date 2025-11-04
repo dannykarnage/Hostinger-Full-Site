@@ -43,22 +43,45 @@
     border: 1px solid gray;
 }
 
-/* Adjust padding for password input to prevent text overlap with the toggle icon */
-.password-input {
-    padding-right: 40px; 
+/* New Flex container to wrap input and toggle button */
+.password-input-wrapper {
+    display: flex;
+    align-items: center; /* Vertically center the input and the toggle box */
+    width: 100%;
 }
 
-/* Updated: Styling for the password toggle icon to position it inside the input field */
-.password-toggle {
-    position: absolute;
-    /* Adjust top to position it correctly beneath the label and align vertically center to the input */
-    top: 38px; 
-    /* Adjust right to move it from the edge of the form closer to the input's right border */
-    right: 25px; 
+/* Update password-input to fill remaining space and adjust borders for the connected look */
+.password-input-wrapper .password-input {
+    flex-grow: 1; /* Take up all remaining width */
+    width: 100%; /* Overrides base input width of 93% for flex layout */
+    border-radius: 5px 0 0 5px; /* Adjust radius for the box on the right */
+    border-right: none; /* Remove right border to merge with box */
+    padding-right: 10px; /* Restore standard right padding */
+}
+
+/* New container with fixed dimensions as requested, positioned next to the input */
+.password-toggle-box {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white; /* Match input background */
+    border: 1px solid gray;
+    border-radius: 0px 5px 5px 0px; /* Adjust radius for the connected look */
     cursor: pointer;
-    /* Removed padding so the icon sits flush and doesn't affect the calculated size */
-    padding: 0; 
-    transform: translateY(-50%); /* Fine-tune vertical alignment relative to top: 38px */
+    box-sizing: border-box; /* Ensures the border is included in the 42x42 size */
+    margin-left: -1px; /* Overlap the border to prevent double-thickness appearance */
+}
+
+/* Remove absolute positioning from the toggle span as it is now inside the new box */
+.password-toggle {
+    position: static;
+    transform: none;
+    top: auto;
+    right: auto;
+    padding: 0;
+    cursor: pointer;
 }
 
 .eye-icon {
