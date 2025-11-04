@@ -1,6 +1,5 @@
 <?php
 
-    //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
     $success = false;
 
     session_start();
