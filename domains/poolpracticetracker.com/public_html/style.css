@@ -13,12 +13,37 @@
 
 /* Base Body and Font Settings */
 body {
-    background-color: var(--color-background);
+    /* background-color: var(--color-background); */ /* Removed to allow background image to show */
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
 }
+
+/* New rule for the site-wide background image */
+body::before {
+    content: ' ';
+    display: block;
+    position: fixed; /* Stationary (does not move on scroll) */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Places the image behind all other content */
+    
+    /* Placeholder image for a rack of pool balls */
+    background-image: url('https://placehold.co/1920x1080/888/ddd?text=Pool+Rack+Background');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    /* Apply grayscale filter */
+    filter: grayscale(100%);
+    
+    /* Make the image subtle so content is readable */
+    opacity: 0.15; /* Adjust this value (0.0 to 1.0) as needed */
+}
+
 
 /* 2. Layout and Structure */
 .main-content {
