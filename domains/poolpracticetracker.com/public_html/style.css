@@ -1,0 +1,360 @@
+/* --- Custom Stylesheet for PoolPracticeTracker.com --- */
+
+/* 1. Root Variables and Base Styles */
+:root {
+    --color-primary: #16a34a; /* Emerald green, like felt */
+    --color-secondary: #0f172a; /* Slate black, dark wood */
+    --color-text-light: #f8fafc; /* Slate-50/White */
+    --color-text-dark: #1f2937; /* Gray-800 */
+    --color-background: #f3f4f6; /* Gray-100 */
+}
+
+/* Base Body and Font Settings */
+body {
+    background-color: var(--color-background);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+}
+
+/* 2. Layout and Structure */
+.main-content {
+    /* Equivalent to max-w-7xl mx-auto p-4 sm:p-8 */
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+}
+
+@media (min-width: 640px) {
+    .main-content {
+        padding: 2rem;
+    }
+}
+
+/* Ensure the main area takes up the remaining height */
+.main-container {
+    /* Full height minus header (80px) and footer (64px) */
+    min-height: calc(100vh - 5rem - 4rem);
+}
+
+
+/* 3. Header Styles */
+.main-header {
+    /* bg-secondary shadow-lg sticky top-0 z-10 h-20 */
+    background-color: var(--color-secondary);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 5rem; /* h-20 */
+}
+
+.header-container {
+    /* max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full */
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Section */
+.header-logo {
+    /* flex items-center space-x-2 text-xl font-bold text-primary hover:text-white transition duration-200 rounded-lg p-2 */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    transition: color 0.2s;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.header-logo:hover {
+    color: var(--color-text-light);
+}
+
+.logo-icon {
+    font-size: 1.875rem; /* text-3xl */
+}
+
+.logo-text {
+    display: none;
+}
+@media (min-width: 640px) {
+    .logo-text {
+        display: inline;
+    }
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: none;
+    gap: 2rem; /* space-x-8 */
+}
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+}
+
+.nav-link {
+    /* text-white hover:text-primary px-3 py-2 text-sm font-medium transition duration-200 rounded-lg */
+    color: var(--color-text-light);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s, background-color 0.2s;
+    border-radius: 0.5rem;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+/* Social Icons */
+.social-icons-group {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon-link {
+    /* text-white rounded-full p-2 transition duration-200 */
+    color: var(--color-text-light);
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition: color 0.2s;
+}
+
+.social-icon-link:hover {
+    color: var(--color-primary); /* Default hover color */
+}
+
+.social-icon-link.facebook:hover {
+    color: #3b82f6; /* Blue-500 */
+}
+
+.social-icon-link.youtube:hover {
+    color: #dc2626; /* Red-600 */
+}
+
+.icon {
+    /* SVG size and initial color */
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+}
+
+/* 4. Footer Styles */
+.main-footer {
+    /* bg-secondary text-white py-4 mt-auto */
+    background-color: var(--color-secondary);
+    color: var(--color-text-light);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 0.875rem; /* text-sm */
+}
+
+.footer-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.footer-subtitle {
+    /* mt-1 text-gray-400 */
+    margin-top: 0.25rem;
+    color: #9ca3af;
+}
+
+/* 5. Index.php Specific Styles */
+
+/* Hero Section */
+.hero-section {
+    /* text-center mb-12 py-10 rounded-xl bg-white shadow-xl */
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-radius: 0.75rem;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.large-logo-placeholder {
+    /* inline-block p-6 rounded-full bg-gray-200 shadow-inner */
+    display: inline-block;
+    padding: 1.5rem;
+    border-radius: 9999px;
+    background-color: #e5e7eb;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.large-logo-icon {
+    font-size: 4.5rem; /* text-7xl */
+}
+
+.hero-title {
+    /* mt-4 text-5xl font-extrabold text-gray-900 tracking-tight sm:text-6xl */
+    margin-top: 1rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.025em;
+}
+@media (min-width: 640px) {
+    .hero-title {
+        font-size: 3.75rem;
+    }
+}
+
+.hero-primary-text {
+    color: var(--color-primary);
+}
+
+.hero-description {
+    /* mt-3 text-xl text-gray-500 max-w-3xl mx-auto */
+    margin-top: 0.75rem;
+    font-size: 1.25rem;
+    color: #6b7280;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grid Layout */
+.grid-layout {
+    /* grid grid-cols-1 lg:grid-cols-2 gap-12 items-start */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+@media (min-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Card Styles */
+.description-card {
+    /* bg-white p-6 sm:p-8 rounded-xl shadow-xl */
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 640px) {
+    .description-card {
+        padding: 2rem;
+    }
+}
+
+.card-title {
+    /* text-3xl font-bold text-gray-800 mb-4 border-b pb-2 */
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.card-text {
+    /* text-gray-600 leading-relaxed mb-6 */
+    color: #4b5563;
+    line-height: 1.625;
+    margin-bottom: 1.5rem;
+}
+
+.text-highlight {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.text-link {
+    color: #2563eb; /* Blue-600 */
+    font-weight: 500;
+}
+.text-link:hover {
+    color: #1e40af; /* Blue-800 */
+}
+
+.primary-button {
+    /* inline-block bg-primary text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-green-700 transition duration-300 */
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+    background-color: #0f953e; /* Darker green */
+}
+
+
+.video-card {
+    /* bg-secondary p-4 rounded-xl shadow-xl */
+    background-color: var(--color-secondary);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.video-card-title {
+    /* text-3xl font-bold text-white mb-4 text-center */
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Responsive Embed Container */
+.video-responsive-container {
+    /* relative w-full overflow-hidden padding-top: 56.25%; */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-responsive-container iframe {
+    /* absolute top-0 left-0 w-full h-full rounded-lg */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.video-caption {
+    /* text-sm text-gray-400 mt-3 text-center */
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.future-content {
+    /* mt-12 text-center text-gray-500 */
+    margin-top: 3rem;
+    text-align: center;
+    color: #6b7280;
+}
