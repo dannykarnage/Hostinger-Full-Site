@@ -1,9 +1,18 @@
 # Begin EnforceSSL poolpracticetracker.com
 
+# --- Database Credentials ---
 SetEnv DB_HOST localhost
 SetEnv DB_USER u449903691_eooaokt
 SetEnv DB_PASS DKarnag3*ppt
 SetEnv DB_NAME u449903691_eooaokt
+
+# --- SMTP Email Credentials (NEW) ---
+# Replace with your actual SMTP details
+SetEnv SMTP_HOST "host.hostinger.com"
+SetEnv SMTP_USER "info@poolpracticetracker.com"
+SetEnv SMTP_PASS "DKarnag3*infoppt"
+SetEnv SMTP_PORT 587
+
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -12,4 +21,3 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L]
 </IfModule>
 # End EnforceSSL
-
