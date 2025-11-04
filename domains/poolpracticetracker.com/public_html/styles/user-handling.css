@@ -44,18 +44,21 @@
 }
 
 /* Adjust padding for password input to prevent text overlap with the toggle icon */
-#password-input {
+.password-input {
     padding-right: 40px; 
 }
 
-/* New: Styling for the password toggle icon */
+/* Updated: Styling for the password toggle icon to position it inside the input field */
 .password-toggle {
     position: absolute;
-    /* Adjust positioning to be relative to the input box area (below the label) */
-    top: 33px; 
-    right: 18px;
+    /* Adjust top to position it correctly beneath the label and align vertically center to the input */
+    top: 38px; 
+    /* Adjust right to move it from the edge of the form closer to the input's right border */
+    right: 25px; 
     cursor: pointer;
-    padding: 5px; 
+    /* Removed padding so the icon sits flush and doesn't affect the calculated size */
+    padding: 0; 
+    transform: translateY(-50%); /* Fine-tune vertical alignment relative to top: 38px */
 }
 
 .eye-icon {
@@ -71,7 +74,7 @@
 .hidden {
     display: none;
 }
-/* End New Styles */
+/* End Updated Styles */
 
 
 .user-form-btn {
