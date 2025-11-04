@@ -19,11 +19,6 @@
     border-radius: 0px 0px 10px 10px;
 }
 
-/* New: Container for relative positioning of the toggle icon */
-.password-container {
-    position: relative;
-}
-
 .input-group {
     margin: 10px 0px 10px 0px;
 }
@@ -42,63 +37,6 @@
     border-radius: 5px;
     border: 1px solid gray;
 }
-
-/* New Flex container to wrap input and toggle button */
-.password-input-wrapper {
-    display: flex;
-    align-items: center; /* Vertically center the input and the toggle box */
-    width: 100%;
-}
-
-/* Update password-input to fill remaining space and adjust borders for the connected look */
-.password-input-wrapper .password-input {
-    flex-grow: 1; /* Take up all remaining width */
-    width: 100%; /* Overrides base input width of 93% for flex layout */
-    border-radius: 5px 0 0 5px; /* Adjust radius for the box on the right */
-    border-right: none; /* Remove right border to merge with box */
-    padding-right: 10px; /* Restore standard right padding */
-}
-
-/* New container with fixed dimensions as requested, positioned next to the input */
-.password-toggle-box {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white; /* Match input background */
-    border: 1px solid gray;
-    border-radius: 0px 5px 5px 0px; /* Adjust radius for the connected look */
-    cursor: pointer;
-    box-sizing: border-box; /* Ensures the border is included in the 42x42 size */
-    margin-left: -1px; /* Overlap the border to prevent double-thickness appearance */
-}
-
-/* Remove absolute positioning from the toggle span as it is now inside the new box */
-.password-toggle {
-    position: static;
-    transform: none;
-    top: auto;
-    right: auto;
-    padding: 0;
-    cursor: pointer;
-}
-
-.eye-icon {
-    width: 20px; 
-    height: 20px;
-    color: rgb(117, 199, 199); /* Use the theme color for the icon */
-}
-
-.eye-icon:hover {
-    color: rgb(70, 150, 150); /* Slightly darker on hover */
-}
-
-.hidden {
-    display: none;
-}
-/* End Updated Styles */
-
 
 .user-form-btn {
     padding: 10px;
