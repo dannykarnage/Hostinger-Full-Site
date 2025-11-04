@@ -1,1 +1,0 @@
-git config pull.rebase false  # merge
