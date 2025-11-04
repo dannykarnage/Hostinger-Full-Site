@@ -19,6 +19,11 @@
     border-radius: 0px 0px 10px 10px;
 }
 
+/* New: Container for relative positioning of the toggle icon */
+.password-container {
+    position: relative;
+}
+
 .input-group {
     margin: 10px 0px 10px 0px;
 }
@@ -37,6 +42,37 @@
     border-radius: 5px;
     border: 1px solid gray;
 }
+
+/* Adjust padding for password input to prevent text overlap with the toggle icon */
+#password-input {
+    padding-right: 40px; 
+}
+
+/* New: Styling for the password toggle icon */
+.password-toggle {
+    position: absolute;
+    /* Adjust positioning to be relative to the input box area (below the label) */
+    top: 33px; 
+    right: 18px;
+    cursor: pointer;
+    padding: 5px; 
+}
+
+.eye-icon {
+    width: 20px; 
+    height: 20px;
+    color: rgb(117, 199, 199); /* Use the theme color for the icon */
+}
+
+.eye-icon:hover {
+    color: rgb(70, 150, 150); /* Slightly darker on hover */
+}
+
+.hidden {
+    display: none;
+}
+/* End New Styles */
+
 
 .user-form-btn {
     padding: 10px;
