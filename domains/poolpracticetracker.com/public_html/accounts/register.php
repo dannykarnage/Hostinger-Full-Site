@@ -149,6 +149,7 @@
     if($success)
     {
         header("Location: /accounts/thankyou.php");
+        die();
     }
 
 ?>

@@ -1,8 +1,7 @@
 <?php
 
     session_start();
-    //include('/home/u449903691/domains/poolpracticetracker.com/public_html/functions.php');
-    include('/home/u449903691/domains/poolpracticetracker.com/public_html/db_files/connection.php');
+    include('../db_files/connection.php');
     $error_message = "";
     $post_message = "";
     $row = null; // Drill details row
@@ -286,7 +285,7 @@
             <?php endif; ?>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php include('../temps/footer.php'); ?>
 
     </body>
 </html>

@@ -39,7 +39,7 @@
                 {
                     $_SESSION['username'] = $username; // Use the cleaned username
                     header("Location: /index.php");
-                    die;
+                    die();
                 }
             }
             $stmt->close();
@@ -92,7 +92,7 @@
             <form class="user-form" action="/accounts/login.php " method="post">
                 <?php if(!empty($login_error)): ?>
                     <div style="width: 92%; margin: 0px auto; padding: 10px; border: 1px solid #a94442; color: #a94442; background: #f2dede; border-radius: 5px; text-align: left;">
-                        <p><?php echo $login_error; ?></p>
+                        <p><?php echo htmlspecialchars($login_error); ?></p>
                     </div>
                 <?php endif; ?>
                 <div class="input-group">

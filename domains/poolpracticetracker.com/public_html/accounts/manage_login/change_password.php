@@ -184,7 +184,7 @@
             <form class="user-form" action="/accounts/manage_login/change_password.php " method="post">
                 <?php if(!empty($error_message)): ?>
                     <div style="width: 92%; margin: 0px auto; padding: 10px; border: 1px solid #a94442; color: #a94442; background: #f2dede; border-radius: 5px; text-align: left;">
-                        <p><?php echo $error_message; ?></p>
+                        <p><?php echo htmlspecialchars($error_message); ?></p>
                     </div>
                 <?php endif; ?>
                 <?php if(!(isset($_GET['pkey']) && !empty($error_message))): ?>

@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/header.php') ?>
+        <?php include('./temps/header.php') ?>
 
         <main class="main-section">
             <!--<div class="page-title">
@@ -80,7 +80,7 @@
             </div>
         </main>
 
-        <?php include('/home/u449903691/domains/poolpracticetracker.com/public_html/temps/footer.php'); ?>
+        <?php include('./temps/footer.php'); ?>
 
     </body>
 </html>
