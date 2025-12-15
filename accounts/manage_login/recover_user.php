@@ -2,7 +2,15 @@
 
     session_start();
 
-    include('../db_files/connection.php');
+    // FIX: Adjusted path to go back 2 levels (accounts/manage_login/ -> root)
+    if(file_exists("../../db_files/connection.php")) {
+        include("../../db_files/connection.php");
+    } elseif(file_exists("../../db_access/connection.php")) {
+        include("../../db_access/connection.php");
+    } else {
+        die("Error: Could not locate database connection file.");
+    }
+
     $error_message = "";
     $email = "";
 
@@ -37,12 +45,13 @@
                 {
                     //send email
                     $subject = "Username request";
-                    // FIX: Changed absolute path to relative path
+                    // This file is in the same directory, so direct include is fine
                     include('recover_username_email.php');
                     $headers = "From: donotreply@poolpracticetracker.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                     
+                    // Note: It's important to check the mail function's return value for success
                     $success = mail($email,$subject,$email_message,$headers);
 
                     if (!$success)
@@ -84,7 +93,6 @@
         
         
         <?php 
-        // FIX: Changed absolute path to relative path
         include('../../temps/header.php'); 
         ?>
 
@@ -114,7 +122,6 @@
         </main>
 
         <?php 
-        // FIX: Changed absolute path to relative path
         include('../../temps/footer.php'); 
         ?>
 

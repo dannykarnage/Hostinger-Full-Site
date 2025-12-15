@@ -2,7 +2,15 @@
 
     session_start();
 
-    include('../db_files/connection.php');
+    // FIX: Adjusted path to go back 2 levels (accounts/manage_login/ -> root)
+    if(file_exists("../../db_files/connection.php")) {
+        include("../../db_files/connection.php");
+    } elseif(file_exists("../../db_access/connection.php")) {
+        include("../../db_access/connection.php");
+    } else {
+        die("Error: Could not locate database connection file.");
+    }
+
     $error_message = "";
 
     //determine if a user is already logged in and, if so, redirect to the homepage
@@ -69,6 +77,7 @@
                 {
                     //send email
                     $subject = "Password reset request.";
+                    // This file is in the same directory, so direct include is fine
                     include('password_reset_email.php');
                     $headers = "From: donotreply@poolpracticetracker.com \r\n";
                     $headers .= "MIME-Version: 1.0" . "\r\n";
